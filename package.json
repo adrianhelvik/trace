@@ -1,0 +1,13 @@
+{
+  "name": "trace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  },
+  "scripts": {
+    "start": "jest --watch",
+    "test": "jest"
+  }
+}

@@ -67,3 +67,17 @@ test('it indents all lines of the message', () => {
     ].join('\n')
   )
 })
+
+test('wrong trace from ergolang source', () => {
+  const source = '12'
+  const index = 2
+  const message = 'Expected either one or two, but the entire source had been processed.'
+
+  check(
+    trace(source, index, message),
+    [
+      '1 | 12',
+      '      ^ [1:3] Expected either one or two, but the entire source had been processed.',
+    ].join('\n')
+  )
+})

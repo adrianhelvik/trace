@@ -1,4 +1,5 @@
 function trace (source, index, message) {
+  let found = false
   let letter = 0
   let line = 0
 
@@ -10,9 +11,13 @@ function trace (source, index, message) {
       letter += 1
     }
     if (index === i) {
+      found = true
       break
     }
   }
+
+  if (! found)
+    letter += 1
 
   const messagePrefix = '^ [' + (line+1) + ':' + (letter) + '] '
   const sourceLine = source.split('\n')[line]

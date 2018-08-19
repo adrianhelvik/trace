@@ -28,7 +28,7 @@ function trace (source, index, message) {
     message[i] = ' '.repeat(letter + preText.length - 1 + messagePrefix.length) + message[i]
   message = message.join('\n')
 
-  return preText + sourceLine + '\n' + ' '.repeat(letter + preText.length - 1) + messagePrefix + message
+  return '\n' + preText + sourceLine + '\n' + ' '.repeat(letter + preText.length - 1) + messagePrefix + message + '\n'
 }
 
 module.exports = trace

@@ -55,3 +55,15 @@ test('multi char line number', () => {
     ].join('\n')
   )
 })
+
+test('it indents all lines of the message', () => {
+  check(
+    trace('foo', 1, 'This\nis a\nmultiline message'),
+    [
+      '1 | foo',
+      '     ^ [1:2] This',
+      '             is a',
+      '             multiline message'
+    ].join('\n')
+  )
+})

@@ -14,10 +14,16 @@ function trace (source, index, message) {
     }
   }
 
+  const messagePrefix = '^ [' + (line+1) + ':' + (letter) + '] '
   const sourceLine = source.split('\n')[line]
   const preText = (line+1) + ' | '
 
-  return preText + sourceLine + '\n' + ' '.repeat(letter + preText.length - 1) + '^ [' + (line+1) + ':' + (letter) + '] ' + message
+  message = message.split('\n')
+  for (let i = 1; i < message.length; i++)
+    message[i] = ' '.repeat(letter + preText.length - 1 + messagePrefix.length) + message[i]
+  message = message.join('\n')
+
+  return preText + sourceLine + '\n' + ' '.repeat(letter + preText.length - 1) + messagePrefix + message
 }
 
 module.exports = trace

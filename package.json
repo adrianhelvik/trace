@@ -1,5 +1,5 @@
 {
-  "name": "trace",
+  "name": "@adrianhelvik/trace",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,5 +9,6 @@
   "scripts": {
     "start": "jest --watch",
     "test": "jest"
-  }
+  },
+  "private": false
 }
